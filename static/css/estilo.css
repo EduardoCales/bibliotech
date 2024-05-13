@@ -1,0 +1,158 @@
+/* Breakpoint
+-------------*/
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+    .container {
+        width: 200px;
+    }
+    .formulario{
+        width: 90px;
+    }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .formulario {
+        height: 200px;
+    }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+   
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    
+}
+
+body {
+    overflow: hidden;
+    background-image: url(../image/background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.container{
+    background-color: white;
+    border-radius: 30px;
+    margin-top: 150px;
+    display: block;
+}
+.cadastrar {
+    text-decoration: none;
+    color: rgba(0, 0, 248, 0.856);
+    display: flex;
+    margin-top: 20px;
+    margin-left: 410px;
+}
+.formulario {
+    border-radius: 30px;
+    background-color: #FABA28;
+    text-align: center;
+    width: 550px;
+    height: 600px;
+}
+.login {
+    color: white;
+    font-size: 70px;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+}
+.logo {
+    margin-top: 120px;
+    margin-left: 75px;
+}
+.form-group {
+    display: block;
+}
+.cp-email {
+    margin-bottom: 30px;
+    border-color: rgb(255, 255, 255);
+    width: 350px;
+    height: 50px;
+    border-radius: 50px;
+}
+.caixa-email {
+    display: flex;
+    justify-content: center;
+}
+.cp-senha {
+    margin-bottom: 10px;
+    border-color: rgb(255, 255, 255);
+    width: 350px;
+    height: 50px;
+    border-radius: 50px;
+}
+.caixa-senha {
+    display: flex;
+    justify-content: center;
+}
+.botao {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+.btn {
+    height: 60px;
+    width: 450px;
+    background-color: #521be9;
+ /* Tamanho do botão */
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 25px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 50px; /* Borda arredondada */
+    transition: transform 0.3s ease; /* Transição de animação */
+}
+.btn:hover{
+    transform: scale(1.1);
+    color: #fff;
+    background-color: #0b5ed7;
+}
+.txt-login {
+    font-size: 40px;
+    font-family: 'Poppins', sans-serif;
+}
+.e-senha {
+    color: rgba(0, 0, 248, 0.856);
+    text-decoration: none;
+    display: flex;
+    margin-left: 330px;
+    margin-top: 20px;
+}
+
+.href-entrar, .href-cadastro{
+    background-color: #521be9; /* Cor de fundo do botão */
+    border: none;
+    color: white; /* Cor do texto */
+    padding: 10px 45px 10px 45px; /* Tamanho do botão */
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 25px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 50px; /* Borda arredondada */
+    transition: transform 0.3s ease; /* Transição de animação */
+}
+.href-entrar:hover, .href-cadastro:hover{
+    transform: scale(1.1);
+    color: #fff;
+    background-color: #0b5ed7;
+
+}
+.possui-cnt{
+    color: #fff;
+}
+
