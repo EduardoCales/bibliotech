@@ -7,13 +7,29 @@ body {
     background-size: cover;
 }
 .box-area {
-    width: 1030px;
+    width: 1230px;
     border-radius: 40px;
+}
+.formulario {
+    background-color: #faba28;
+    border-radius: 40px;
+}
+.txt-topo {
+    color: white;
+    font-size: 70px;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+}
+.caixa-email, .caixa-senha {
+    background: white;
+    border-radius: 30px;
+    height: 50px;
 }
 .btn-logar {
     background-color: #521be9;
     border: none;
     color: white;
+    padding: 10px 45px 10px 45px;
     text-decoration: none;
     font-size: 25px;
     border-radius: 25px;
@@ -26,4 +42,7 @@ body {
 }
 .esquecer {
     text-decoration: none;
+}
+.txt-conta-nova {
+    color:#fff;
 }
