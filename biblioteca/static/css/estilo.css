@@ -2,10 +2,11 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-}
-.caixa {
-    border-radius: 70px;
+    background-image: url(../image/background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 .box-area {
     width: 1030px;
+    border-radius: 40px;
 }
