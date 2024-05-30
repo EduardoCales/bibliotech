@@ -21,7 +21,6 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 .caixa-email, .caixa-senha {
-    background: white;
     border-radius: 30px;
     height: 50px;
 }
