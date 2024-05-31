@@ -2,6 +2,7 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate
+from django.contrib.auth import login as login_django
 
 def login(request):
     if request.method == 'GET':
@@ -13,9 +14,11 @@ def login(request):
         user = authenticate(username=username, password=senha)
 
         if user:
+            login_django(request, user)
             return HttpResponse('entrou!') #<-- Aqui deve vir o template da home
         else:
             return HttpResponse('nome ou senha invalidos')
+        
 
 def cadastro(request):
     if request.method == 'GET':

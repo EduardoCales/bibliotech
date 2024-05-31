@@ -16,9 +16,11 @@ class Livro(models.Model):
      category = models.ForeignKey(
           Category, on_delete=models.SET_NULL, null=True
           )
-     author = models.ForeignKey(
+     author = models.ForeignKey(        #<-- Esse cara aqui tem q trocar pq ta como usuario
           User, on_delete=models.SET_NULL, null=True
           )
      
      def __str__(self):
          return self.title
+     
+     #Precisa criar uma tabela de author com nome

@@ -45,6 +45,7 @@
                         <div class="header-text mb-4">
                             <p class="txt-topo d-flex justify-content-center mt-3 mb-2">Login</p>
                         </div>
+                        <form action="{% url 'login' %}" method="POST">{% csrf_token %}
                         <div class="input-group mb-3">
                             <input type="text" class="form-control form-control-lg bg-light fs-6 caixa-email" placeholder="Nome">
                         </div>
@@ -61,12 +62,13 @@
                             </div>
                         </div>
                         <div class="input-group d-flex justify-content-center mt-3 mb-2">
-                            <input class="btn-logar" type="submit" value="logar">
+                            <input class="btn-logar" type="submit" value="Entrar">
                         </div>
                         <h3 class=" d-flex justify-content-center txt-conta-nova mt-3 mb-2">Não possuí conta?</h3>
                         <div class="input-group d-flex justify-content-center mt-3 mb-3">
-                            <input class="btn-logar" type="submit" value="cadastrar">
+                            <a href="{% url 'cadastro' %}" class="btn-logar">cadastrar</a>
                         </div>
+                    </form>
                     </div>
                 </div>
             </div>
