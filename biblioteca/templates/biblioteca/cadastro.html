@@ -1,11 +1,76 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>cadastro</title>
+    <!--Aqui é o começo do fontawesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/fontawesome.min.css" integrity="sha512-UuQ/zJlbMVAw/UU8vVBhnI4op+/tFOpQZVT+FormmIEhRSCnJWyHiBbEVgM4Uztsht41f3FzVWgLuwzUqOObKw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/brands.min.css" integrity="sha512-DJLNx+VLY4aEiEQFjiawXaiceujj5GA7lIY8CHCIGQCBPfsEG0nGz1edb4Jvw1LR7q031zS5PpPqFuPA8ihlRA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/solid.min.css" integrity="sha512-Hp+WwK4QdKZk9/W0ViDvLunYjFrGJmNDt6sCflZNkjgvNq9mY+0tMbd6tWMiAlcf1OQyqL4gn2rYp7UsfssZPA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'image/fav/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'image/fav/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static "image/fav/favicon-16x16.png" %}">
+    <link rel="manifest" href="{% static "image/fav/site.webmanifest" %}">
+    <!--Aqui é o final do fontawesome-->
+
+    <!--Esse aqui é começo do  bootstrap-->
+    <link rel="stylesheet" href="{% static "bootstrap-5.0.2-dist/css/bootstrap.min.css" %}">
+    <!--Esse é o fim do bootstrap-->
+
+    <link rel="stylesheet" href="{% static "css/estilo.css" %}">
+ 
+    <title>Cadastrar</title>
 </head>
+<!--Tudo que estiver para cima disso é configurações de css e bootstrap-->
+
+
+<!--Tudo que estiver para baixo disso é conteúdo do site-->
 <body>
-    <a href="login">Home</a>
+    <div class="container d-flex justify-content-center align-items-center min-vh-100">
+        <div class="row bg-white shadow box-area">
+            <div class="col-md-7  d-flex justify-content-center align-items-center flex-column left-box">
+                <div class="logo-image">
+                    <img src="{% static "image/logo.png" %}" class="img-fluid" style="width: 600px;">
+                </div>
+            </div>
+
+            <div class="col-md-5 right-box">
+                <div class="row align-items-center">
+                    <div class="formulario">
+                        <div class="header-text mb-4">
+                            <p class="txt-topo d-flex justify-content-center mt-3 mb-2">Login</p>
+                        </div>
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control form-control-lg bg-light fs-6 caixa-email" placeholder="Email">
+                        </div>
+                        <div class="input-group mb-3">
+                            <input type="password" class="form-control form-control-lg bg-light fs-6 caixa-senha" placeholder="Senha">
+                        </div>
+                        <div class="input-group mb-5 d-flex justify-content-between">
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="formCheck">
+                                <label for="formCheck" class="form-check-label text-secondary"><small>Lembrar</small></label>
+                            </div>
+                            <div class="esqueci">
+                                <small><a href="#" class="esquecer">Esqueceu seu senha?</a></small>
+                            </div>
+                        </div>
+                        <div class="input-group logar d-flex justify-content-center">
+                            <a href="#" class="btn-logar">Entrar</a>
+                        </div>
+                        <h3 class=" d-flex justify-content-center txt-conta-nova mt-3 mb-2">Nao possuí conta?</h3>
+                        <div class="input-group logar d-flex justify-content-center mt-3 mb-2">
+                            <a href="{% url 'cadastro' %}" class="btn-logar">Cadastrar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

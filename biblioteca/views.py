@@ -1,9 +1,8 @@
-from django.http import HttpResponse
 from django.shortcuts import render
+from django.views import generic
 
-def login(request):
-    return render(request, 'biblioteca/login.html')
+class LoginView(generic.TemplateView):
+    template_name = 'biblioteca/login.html'
 
-def cadastro(request):
-    return render(request, 'biblioteca/cadastro.html')
-
+class CadastroView(generic.TemplateView):
+    template_name = 'biblioteca/cadastro.html'
