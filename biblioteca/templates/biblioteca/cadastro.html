@@ -12,10 +12,7 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/solid.min.css" integrity="sha512-Hp+WwK4QdKZk9/W0ViDvLunYjFrGJmNDt6sCflZNkjgvNq9mY+0tMbd6tWMiAlcf1OQyqL4gn2rYp7UsfssZPA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'image/fav/apple-touch-icon.png' %}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'image/fav/favicon-32x32.png' %}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{% static "image/fav/favicon-16x16.png" %}">
-    <link rel="manifest" href="{% static "image/fav/site.webmanifest" %}">
+    <link rel="icon" href="{% static "image/user-solid.svg" %}">
     <!--Aqui é o final do fontawesome-->
 
     <!--Esse aqui é começo do  bootstrap-->
@@ -45,25 +42,18 @@
                         <div class="header-text mb-4">
                             <p class="txt-topo d-flex justify-content-center mt-3 mb-2">Cadastro</p>
                         </div>
-                        <div class="input-group mb-3">
-                            <input type="text" class="form-control form-control-lg bg-light fs-6 caixa-email" placeholder="Email">
-                        </div>
-                        <div class="input-group mb-3">
-                            <input type="password" class="form-control form-control-lg bg-light fs-6 caixa-senha" placeholder="Senha">
-                        </div>
-                        <div class="input-group mb-5 d-flex justify-content-between">
-                            <div class="form-check">
-                                <input type="checkbox" class="form-check-input" id="formCheck">
-                                <label for="formCheck" class="form-check-label text-secondary"><small>Lembrar</small></label>
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control form-control-lg bg-light fs-6 caixa-email" placeholder="Nome">
                             </div>
-                            <div class="esqueci">
-                                <small><a href="#" class="esquecer">Esqueceu seu senha?</a></small>
+                            <div class="input-group mb-3">
+                                <input type="password" class="form-control form-control-lg bg-light fs-6 caixa-senha" placeholder="Email">
                             </div>
-                        </div>
-                        <div class="input-group logar d-flex justify-content-center">
-                            <a href="#" class="btn-logar">Entrar</a>
-                        </div>
-                        <h3 class=" d-flex justify-content-center txt-conta-nova mt-3 mb-2">Nao possuí conta?</h3>
+                            <div class="input-group mb-3">
+                                <input type="password" class="form-control form-control-lg bg-light fs-6 caixa-senha" placeholder="Senha">
+                            </div>
+                            <div class="input-group logar d-flex justify-content-center">
+                                <a href="#" class="btn-logar">Entrar</a>
+                            </div>
                         <div class="input-group logar d-flex justify-content-center mt-3 mb-2">
                             <a href="{% url 'login' %}" class="btn-logar">Cadastrar</a>
                         </div>
