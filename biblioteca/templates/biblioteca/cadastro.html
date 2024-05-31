@@ -42,21 +42,23 @@
                         <div class="header-text mb-4">
                             <p class="txt-topo d-flex justify-content-center mt-3 mb-2">Cadastro</p>
                         </div>
-                            <div class="input-group mb-3">
-                                <input type="text" class="form-control form-control-lg bg-light fs-6 caixa-email" placeholder="Nome">
+                                <form action="{% url 'cadastro' %}" method='POST'>{% csrf_token %}
+                            <div class="input-group mb-3"> 
+                                    <input type="text" class="form-control form-control-lg bg-light fs-6 caixa-email" placeholder="Nome" name='username'>
+                                    </div>
+                                        <div class="input-group mb-3">
+                                            <input type="email" class="form-control form-control-lg bg-light fs-6 caixa-senha" placeholder="Email" name='email'>
+                                        </div>
+                                        <div class="input-group mb-3">
+                                            <input type="password" class="form-control form-control-lg bg-light fs-6 caixa-senha" placeholder="Senha" name='senha'>
+                                        </div>
+                                        <div class="input-group logar d-flex justify-content-center">
+                                            <input class="btn-logar" type="submit" value='logar'>
+                                        </div>
+                                    <div class="input-group logar d-flex justify-content-center mt-3 mb-2">
+                                    <input class="btn-logar" type="submit" value='cadastrar'>
+                                </form>
                             </div>
-                            <div class="input-group mb-3">
-                                <input type="password" class="form-control form-control-lg bg-light fs-6 caixa-senha" placeholder="Email">
-                            </div>
-                            <div class="input-group mb-3">
-                                <input type="password" class="form-control form-control-lg bg-light fs-6 caixa-senha" placeholder="Senha">
-                            </div>
-                            <div class="input-group logar d-flex justify-content-center">
-                                <a href="#" class="btn-logar">Entrar</a>
-                            </div>
-                        <div class="input-group logar d-flex justify-content-center mt-3 mb-2">
-                            <a href="{% url 'login' %}" class="btn-logar">Cadastrar</a>
-                        </div>
                     </div>
                 </div>
             </div>
