@@ -19,7 +19,6 @@ def login(request):
         else:
             return HttpResponse('nome ou senha invalidos')
         
-
 def cadastro(request):
     if request.method == 'GET':
         return render(request, 'biblioteca/cadastro.html')
@@ -37,3 +36,6 @@ def cadastro(request):
         user.save()
 
         return HttpResponse('Usuario cadastrado')# <-- deve mandar para a pagina de login e uma mensagem
+    
+def home(request):
+    return render(request, 'biblioteca/home.html')

@@ -16,11 +16,39 @@ class Livro(models.Model):
      category = models.ForeignKey(
           Category, on_delete=models.SET_NULL, null=True
           )
-     author = models.ForeignKey(        #<-- Esse cara aqui tem q trocar pq ta como usuario
+     author = models.ForeignKey(        
           User, on_delete=models.SET_NULL, null=True
           )
      
      def __str__(self):
          return self.title
+     '''
+     Tem q criar a tabela usuario e criar a tabela de autor.
+     A tabela de autor deve ser uma chave primaria de Livro, pois 
+     um livro tem um autor.
+     '''
      
-     #Precisa criar uma tabela de author com nome
+     '''
+     class Autor(models.Model):
+     nome = models.ChairField(max_lenght=65)
+     nacionalidade = models.ChairField(max_lenght)
+     '''
+
+     """
+     class Usuario(models.Model):
+     nome = models.CharField(max_lenght=65)
+     sobrenome = models.CharField(max_lenght=65)
+     email = models.ChairField(max_lenght=65)
+     foto = models.ImageField(upload_to='biblioteca/covers/%Y/%m/%d/')
+     cpf = models.ChairField()
+     endereco = models.ChairField()
+     telefone()
+     """
+
+     '''
+     class Emprestimo(models.Model):
+     data_retirada = models.DateTimeField(auto_now_add=True)
+     previsao_devolucao = models.DateTimeField(auto_now_add=True)
+     data_devolucao = models.DateTimeField(auto_now_add=True)
+     
+     '''
