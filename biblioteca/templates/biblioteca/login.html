@@ -31,6 +31,13 @@
 
 <!--Tudo que estiver para baixo disso é conteúdo do site-->
 <body>
+
+    {% if status == '1' %}
+    <div class="alert alert-danger" role="alert">
+        Nome ou email invalidos
+    </div>
+    {% endif %}
+
     <div class="container d-flex justify-content-center align-items-center min-vh-100">
         <div class="row bg-white shadow box-area">
             <div class="col-md-7  d-flex justify-content-center align-items-center flex-column left-box">
@@ -45,12 +52,16 @@
                         <div class="header-text mb-4">
                             <p class="txt-topo d-flex justify-content-center mt-3 mb-2">Login</p>
                         </div>
-                        <form action="{% url 'login' %}" method="POST">{% csrf_token %}
+                        <form action="{% url 'validar_login' %}" method="POST">{% csrf_token %}
                         <div class="input-group mb-3">
-                            <input type="text" class="form-control form-control-lg bg-light fs-6 caixa-email" placeholder="Nome">
+                            <input type="email" class="form-control form-control-lg bg-light fs-6 caixa-email" placeholder="Email"
+                            name="email"
+                            >
                         </div>
                         <div class="input-group mb-3">
-                            <input type="password" class="form-control form-control-lg bg-light fs-6 caixa-senha" placeholder="Senha">
+                            <input type="password" class="form-control form-control-lg bg-light fs-6 caixa-senha" placeholder="Senha"
+                            name="senha"
+                            >
                         </div>
                         <div class="input-group mb-5 d-flex justify-content-between">
                             <div class="form-check">
@@ -65,7 +76,7 @@
                             <input class="btn-logar" type="submit" value="Entrar">
                         </div>
                         <h3 class=" d-flex justify-content-center txt-conta-nova mt-3 mb-2">Não possuí conta?</h3>
-                        <div class="input-group d-flex justify-content-center mt-3 mb-3">
+                        <div class="input-group d-flex justify-content-center mt-3 mb-2">
                             <a href="{% url 'cadastro' %}" class="btn-logar">cadastrar</a>
                         </div>
                     </form>

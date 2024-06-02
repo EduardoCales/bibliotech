@@ -1,41 +1,61 @@
+from hashlib import sha256
 from django.http import HttpResponse
 from django.shortcuts import render
-from django.contrib.auth.models import User
-from django.contrib.auth import authenticate
-from django.contrib.auth import login as login_django
+from django.shortcuts import redirect
+from .models import Usuario
 
 def login(request):
-    if request.method == 'GET':
-        return render(request, 'biblioteca/login.html')
-    else:
-        username = request.POST.get('username')
-        senha = request.POST.get('senha')
-
-        user = authenticate(username=username, password=senha)
-
-        if user:
-            login_django(request, user)
-            return HttpResponse('entrou!') #<-- Aqui deve vir o template da home
-        else:
-            return HttpResponse('nome ou senha invalidos')
+    status = request.GET.get('status')
+    return render(request, 'biblioteca/login.html', {'status': status})
         
 def cadastro(request):
-    if request.method == 'GET':
-        return render(request, 'biblioteca/cadastro.html')
-    else:
-        username = request.POST.get('username')
-        email = request.POST.get('email')
-        senha = request.POST.get('senha')
+    status = request.GET.get('status')
+    return render(request, 'biblioteca/cadastro.html', {'status': status})
 
-        user = User.objects.filter(username=username).first()
+def validar_login(request):
+    email = request.POST.get('email')
+    senha = request.POST.get('senha')
+    senha = sha256(senha.encode()).hexdigest()
 
-        if user:
-            return HttpResponse('Ja existe algume com esse nome') #<-- Um template com uma tela falando isso
-        
-        user = User.objects.create_user(username=username, email=email, password=senha)
-        user.save()
+    usuario = Usuario.objects.filter(email=email, senha=senha)
 
-        return HttpResponse('Usuario cadastrado')# <-- deve mandar para a pagina de login e uma mensagem
+    if len(usuario) == 0:
+        return redirect('/?status=1')
+    elif len(usuario) > 0:
+        request.session['usuario'] = usuario[0].id
+        return redirect('/home')
+
+
+def validar_cadastro(request):
+    nome = request.POST.get('nome')
+    sobrenome = request.POST.get('sobrenome')
+    email = request.POST.get('email')
+    senha = request.POST.get('senha')
+    covers = request.POST.get('covers')
+    cpf = request.POST.get('cpf')
+    endereco = request.POST.get('endereco')
+    telefone = request.POST.get('telefone')
+
+    usuario = Usuario.objects.filter(email = email)
+    
+    if len(nome.strip()) == 0 or len(sobrenome.strip()) == 0 or len(email.strip()) == 0 or len(senha.strip()) == 0 or len(covers.strip()) == 0 or len(cpf.strip()) == 0 or len(endereco.strip()) == 0 or len(telefone.strip()) == 0:
+        # A função strip() é utilizada para remover espaçõs em branco
+        return redirect('/cadastro/?status=1')
+    
+    if len(senha) < 8:
+        return redirect('/cadastro/?status=2')
+    
+    if len(usuario) > 0:
+        return redirect('/cadastro/?status=3')
+    
+    try:
+        senha = sha256(senha.encode()).hexdigest()
+        usuario = Usuario(nome = nome, sobrenome = sobrenome, email = email, senha = senha, covers = covers, cpf = cpf, endereco = endereco, telefone = telefone)
+        usuario.save()
+
+        return redirect('/cadastro/?status=0')
+    except:
+        return redirect('/cadastro/?status=4')
     
 def home(request):
     return render(request, 'biblioteca/home.html')
