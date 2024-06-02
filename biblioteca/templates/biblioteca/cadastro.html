@@ -27,52 +27,55 @@
 
 
 <!--Tudo que estiver para baixo disso é conteúdo do site-->
-<body>
+    <body>
 
-    {% if status == '0' %}
-    <div class="alert alert-success" role="alert">
-        Cadastro realizado com sucesso!
-    </div>
-    {% endif %}
-
-    {% if status == '1' %}
-    <div class="alert alert-danger" role="alert">
-        Campos em vazio nao são aceitos
-    </div>
-    {% endif %}
-
-    {% if status == '2' %}
-    <div class="alert alert-danger" role="alert">
-        Sua senha deve conter pelo menos 8 digítos
-    </div>
-    {% endif %}
-
-    {% if status == '3' %}
-    <div class="alert alert-danger" role="alert">
-        Usuário já cadastrado
-    </div>
-    {% endif %}
-
-    {% if status == '4' %}
-    <div class="alert alert-danger" role="alert">
-        Erro do sistema
-    </div>
-    {% endif %}
-
-    <div class="container d-flex justify-content-center align-items-center min-vh-100">
-        <div class="row bg-white shadow box-area">
-            <div class="col-md-7  d-flex justify-content-center align-items-center flex-column left-box">
-                <div class="logo-image">
-                    <img src="{% static "image/logo.png" %}" class="img-fluid" style="width: 600px;">
-                </div>
+        <!--Esses são os avisos-->
+            {% if status == '0' %}
+            <div class="alert alert-success" role="alert">
+                Cadastro realizado com sucesso!
             </div>
+            {% endif %}
 
-            <div class="col-md-5 right-box">
-                <div class="row align-items-center">
-                    <div class="formulario">
-                        <div class="header-text mb-4">
-                            <p class="txt-topo d-flex justify-content-center mt-3 mb-2">Cadastro</p>
+            {% if status == '1' %}
+            <div class="alert alert-danger" role="alert">
+                Campos em vazio nao são aceitos
+            </div>
+            {% endif %}
+
+            {% if status == '2' %}
+            <div class="alert alert-danger" role="alert">
+                Sua senha deve conter pelo menos 8 digítos
+            </div>
+            {% endif %}
+
+            {% if status == '3' %}
+            <div class="alert alert-danger" role="alert">
+                Usuário já cadastrado
+            </div>
+            {% endif %}
+
+            {% if status == '4' %}
+            <div class="alert alert-danger" role="alert">
+                Erro do sistema
+            </div>
+            {% endif %}
+        <!--Final dos avisos-->
+
+        <!--Tudo para baixo é conteúdo do site-->
+            <div class="container d-flex justify-content-center align-items-center min-vh-100">
+                <div class="row bg-white shadow box-area">
+                    <div class="col-md-7  d-flex justify-content-center align-items-center flex-column left-box">
+                        <div class="logo-image">
+                            <img src="{% static "image/logo.png" %}" class="img-fluid" style="width: 600px;">
                         </div>
+                    </div>
+
+                    <div class="col-md-5 right-box">
+                        <div class="row align-items-center">
+                            <div class="formulario">
+                                <div class="header-text mb-4">
+                                    <p class="txt-topo d-flex justify-content-center mt-3 mb-2">Cadastro</p>
+                                </div>
                                 <form action="{% url 'validar_cadastro' %}" method='POST'>{% csrf_token %}
                                     <div class="input-group mb-3"> 
                                         <input type="text" class="form-control form-control-lg bg-light fs-6 caixa-email" placeholder="Nome" name='nome'>
@@ -80,35 +83,36 @@
                                     <div class="input-group mb-3"> 
                                         <input type="text" class="form-control form-control-lg bg-light fs-6 caixa-email" placeholder="Sobrenome" name='sobrenome'>
                                     </div>
-                                        <div class="input-group mb-3">
-                                            <input type="email" class="form-control form-control-lg bg-light fs-6 caixa-senha" placeholder="Email" name='email'>
-                                        </div>
-                                        <div class="input-group mb-3">
-                                            <input type="password" class="form-control form-control-lg bg-light fs-6 caixa-senha" placeholder="Senha" name='senha'>
-                                        </div>
-                                        <div class="input-group mb-3">
-                                            <input type="file" class="form-control form-control-lg bg-light fs-6" placeholder="Imagem" name='covers'>
-                                        </div>
-                                        <div class="input-group mb-3">
-                                            <input type="text" class="form-control form-control-lg bg-light fs-6 caixa-senha" placeholder="CPF" name='cpf'>
-                                        </div>
-                                        <div class="input-group mb-3">
-                                            <input type="text" class="form-control form-control-lg bg-light fs-6 caixa-senha" placeholder="Endereço" name='endereco'>
-                                        </div>
-                                        <div class="input-group mb-3">
-                                            <input type="text" class="form-control form-control-lg bg-light fs-6 caixa-senha" placeholder="Telefone" name='telefone'>
-                                        </div>
-                                        <div class="input-group logar d-flex justify-content-center mt-3 mb-2">
-                                            <input class="btn-logar" type="submit" value='cadastrar'>
-                                            </div>
-                                        <div class="input-group logar d-flex justify-content-center">
-                                            <a href="{% url 'login' %}" class="btn-logar">Entrar</a>
-                                        </div>
-                            </form>
+                                    <div class="input-group mb-3">
+                                        <input type="email" class="form-control form-control-lg bg-light fs-6 caixa-senha" placeholder="Email" name='email'>
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <input type="password" class="form-control form-control-lg bg-light fs-6 caixa-senha" placeholder="Senha" name='senha'>
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <input type="file" class="form-control form-control-lg bg-light fs-6" placeholder="Imagem" name='covers'>
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <input type="text" class="form-control form-control-lg bg-light fs-6 caixa-senha" placeholder="CPF" name='cpf'>
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <input type="text" class="form-control form-control-lg bg-light fs-6 caixa-senha" placeholder="Endereço" name='endereco'>
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <input type="text" class="form-control form-control-lg bg-light fs-6 caixa-senha" placeholder="Telefone" name='telefone'>
+                                    </div>
+                                    <div class="input-group logar d-flex justify-content-center mt-3 mb-2">
+                                        <input class="btn-logar" type="submit" value='cadastrar'>
+                                    </div>
+                                    <div class="input-group logar d-flex justify-content-center">
+                                        <a href="{% url 'login' %}" class="btn-logar">Entrar</a>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-</body>
+        <!--Aqui é o final dos conteúdos-->   
+    </body>
 </html>

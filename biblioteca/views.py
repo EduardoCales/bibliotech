@@ -37,6 +37,14 @@ def validar_cadastro(request):
     telefone = request.POST.get('telefone')
 
     usuario = Usuario.objects.filter(email = email)
+
+    '''
+    Aqui podemos criar duas funçoes que acredito eu não seja impossível. A primeira seria
+    para o usuário colocar caracteres especiais na senha e podemos verificar com algumas funções que
+    o python fornece. A segunda seria pedir para o usuário colocar letra maiúscula no começo da senha.
+    OBS: Tudo isso que coloquei em cima são coisas que eu n sei fazer, ou seja, vou ter que pesquisar e 
+    quebra a cabeça para aprender 
+    '''
     
     if len(nome.strip()) == 0 or len(sobrenome.strip()) == 0 or len(email.strip()) == 0 or len(senha.strip()) == 0 or len(covers.strip()) == 0 or len(cpf.strip()) == 0 or len(endereco.strip()) == 0 or len(telefone.strip()) == 0:
         # A função strip() é utilizada para remover espaçõs em branco
